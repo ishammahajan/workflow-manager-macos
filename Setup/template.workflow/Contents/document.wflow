@@ -652,7 +652,7 @@
 				<dict>
 					<key>COMMAND_STRING</key>
 					<string>rm -f /Users/isham/Documents/WorkflowManagement/current_workflow.txt;
-echo "template[NOTE: CHANGE THIS IF REQUIRED]" &gt;&gt; /Users/isham/Documents/WorkflowManagement/current_workflow.txt;</string>
+echo "replaceName" &gt;&gt; /Users/isham/Documents/WorkflowManagement/current_workflow.txt;</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
