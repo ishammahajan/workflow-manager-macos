@@ -1,1 +1,2 @@
 cp -R ./Setup/* ~/Library/Services
+rm -rf ~/Library/Services/template.workflow
