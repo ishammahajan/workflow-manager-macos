@@ -18,6 +18,7 @@ mkdir -p ~/Documents/WorkflowManagement/${1}
 touch ~/Documents/WorkflowManagement/${1}/default-apps.txt
 touch ~/Documents/WorkflowManagement/${1}/default-url-list.txt
 touch ~/Documents/WorkflowManagement/${1}/iterm-config.txt
+touch ~/Documents/WorkflowManagement/${1}/init
 
 cp -R ./Setup/template.workflow ~/Documents/WorkflowManagement/${1}/${1}.workflow
 sed -i '' "s/replaceName/${1}/g" ~/Documents/WorkflowManagement/${1}/${1}.workflow/Contents/Info.plist
