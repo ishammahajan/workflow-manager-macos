@@ -1,3 +1,18 @@
+if [ $# -eq 0 ]
+  then
+    echo
+    echo "Please enter at least one argument -- the name of the workflow you want to create. Thanks!"
+    echo
+    exit 1
+fi
+if [ ! $# -eq 1 ]
+  then
+    echo
+    echo "Please enter only one argument -- the name of the workflow you want to create. Thanks!"
+    echo
+    exit 1
+fi
+
 mkdir -p ~/Documents/WorkflowManagement/${1}
 
 touch ~/Documents/WorkflowManagement/${1}/default-apps.txt
