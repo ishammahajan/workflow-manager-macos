@@ -1,0 +1,17 @@
+mkdir -p ~/Documents/WorkflowManagement/${1}
+
+touch ~/Documents/WorkflowManagement/${1}/default-apps.txt
+touch ~/Documents/WorkflowManagement/${1}/default-url-list.txt
+touch ~/Documents/WorkflowManagement/${1}/iterm-config.txt
+
+echo
+echo
+echo "Created workflow '${1}'! Next steps to follow:"
+echo
+echo " - Open the provided 'template.workflow' document in automator."
+echo " - Change the name in the Shell Script action (the 5th action) to the name of the workflow."
+echo " - On the menu bar, click 'File', and then 'Duplicate' to duplicate the template quick action, and save the resulting duplicate file in ~/Library/Services."
+echo
+echo " - Go in ~/Documents/WorkflowManagement/${1}/ and edit the files present in that directory to configure the settings."
+echo
+echo
