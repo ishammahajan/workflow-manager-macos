@@ -18,7 +18,7 @@ Use the provided `setupworkflows` script in order to copy the files provided in 
 Use the `createworkflow` script in order to create your workflow! You will be prompted to install a 'Quick Action', please acknowledge it in order to successfully install it. If for some reason the mentioned prompt did not appear, please navigate to `~/Documents/WorkflowManagement/{your-workflow-name}` in order to find the appropriate file (named `{your-workflow-name}.workflow`) and open it.
 
 There are three ways by which you can open a given Workflow.
-- Setup a keyboard shortcut. To do so open the `System Preferences` and navigating to `Keyboard` -> `Shortcuts` -> `Services` and scroll down until you find your Workflow.
+- Setup a keyboard shortcut. To do so open the `System Preferences` and navigating to `Keyboard` &rarr; `Shortcuts` &rarr; `Services` and scroll down until you find your Workflow.
 - Having any app in focus, click on the app's name in the `Menu Bar`, and click `Services` under it. You will find your Workflow listed under `General`.
 - If your computer has a TouchBar, clicking on 'Quick Actions' tabs on it will bring you to a list of `Services`, among which your Workflow will be listed.
 
