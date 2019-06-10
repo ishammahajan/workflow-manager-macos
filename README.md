@@ -1,5 +1,5 @@
 # Workflow Manager
-[![GitHub license](https://img.shields.io/github/license/ishammahajan/workflow-manager-macos.svg)](https://github.com/ishammahajan/workflow-manager-macos/blob/master/LICENSE)
+ [![Platform](https://img.shields.io/badge/platform-osx-lightgrey.svg)](https://en.wikipedia.org/wiki/MacOS) [![GitHub license](https://img.shields.io/github/license/ishammahajan/workflow-manager-macos.svg)](https://github.com/ishammahajan/workflow-manager-macos/blob/master/LICENSE)
 
 Ever realise how much time you might be wasting switching between the contexts of two different projects you might be working on at the same time? Well, here is a solution! Workflow Manager for MacOS uses `Automator.app` and the power of Applescript integrations with [`Google Chrome`](https://www.google.com/chrome/) and [`iTerm`](https://www.iterm2.com/) to stop the minutes you waste switching between the different contexts of different projects (which add up to large amount of time) not considering how your mind distracts itself when doing menial work.
 
