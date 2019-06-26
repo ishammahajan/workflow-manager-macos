@@ -51,7 +51,17 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}		set text item delimiters to linefeed	try		set current_workflow to (read file ((path to home folder as text) &amp; "Documents:WorkflowManagement:current_workflow.txt"))		set current_workflow to paragraph 1 of current_workflow -- clean newline character	on error		display dialog "Sorry I didn't find any previous workflow name in provided directory :(" with title "No Workflow Found"		return input	end try	set my_list to (path to home folder as text) &amp; "Documents:WorkflowManagement:" &amp; current_workflow &amp; ":saved-url-list.txt"	set my_list to (the POSIX path of my_list)	do shell script "rm -f " &amp; quoted form of my_list	tell application "Google Chrome" to set new_items to (get the URL of the tabs in every window) as string	do shell script "echo  " &amp; quoted form of new_items &amp; " &gt;&gt;  " &amp; quoted form of my_list		return inputend run</string>
+					<string>on run {input, parameters}		-- Get Ongoing Workflow	set text item delimiters to linefeed	try		set current_workflow to (read file ((path to home folder as text) &amp; "Documents:WorkflowManagement:current_workflow.txt"))		set current_workflow to paragraph 1 of current_workflow -- clean newline character	on error		display dialog "Sorry I didn't find any previous workflow name in provided directory :(" with title "No Workflow Found"		return input	end try		-- Get Path of File to be Saved	set my_list to (path to home folder as text) &amp; "Documents:WorkflowManagement:" &amp; current_workflow &amp; ":saved-url-list.txt"	set my_list to (the POSIX path of my_list)	do shell script "rm -f " &amp; quoted form of my_list		-- Get Default Browser	try		set default_browser to (read file ((path to home folder as text) &amp; "Documents:WorkflowManagement:default_browser.txt"))		set default_browser to paragraph 1 of default_browser -- clean newline character	on error		display dialog "Please set up your default browser in ~/Documents/WorkflowManagement/default_browser.txt" with title "Default Browser not Found"		return input	end try		-- Different ways to get urls of currently open tabs for Firefox and Google Chrome (no other browsers supported yet)	if default_browser is equal to "Firefox" then		set new_items to do shell script "export opentabs=$(find ~/Library/Application\\ Support/Firefox/Profiles/*.default-release/sessionstore-backups/recovery.jsonlz4); 
+/usr/local/bin/python3 &lt;&lt;&lt; $'import os, json, lz4.block
+f = open(os.environ[\"opentabs\"], \"rb\")
+magic = f.read(8)
+jdata = json.loads(lz4.block.decompress(f.read()).decode(\"utf-8\"))
+f.close()
+for win in jdata.get(\"windows\"):
+	for tab in win.get(\"tabs\"):
+		i = int(tab.get(\"index\")) - 1
+		urls = tab.get(\"entries\")[i].get(\"url\")
+		print(urls)'"	else if default_browser is equal to "Google Chrome" then		tell application "Google Chrome" to set new_items to (get the URL of the tabs in every window) as string	end if		-- Copy list of open URLs to file	do shell script "echo  " &amp; quoted form of new_items &amp; " &gt;&gt;  " &amp; quoted form of my_list		return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -107,7 +117,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:511.000000</string>
+				<string>312.000000:247.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
