@@ -6,3 +6,6 @@ rm -rf ~/Library/Services/template.workflow
 mkdir ~/Documents/WorkflowManagement
 mkdir ~/Documents/WorkflowManagement/Setup
 cp -R $BASEDIR/Setup/template.workflow ~/Documents/WorkflowManagement/Setup
+
+# Copy createworkflow script to executable path
+cp $BASEDIR/createworkflow /usr/local/bin/
