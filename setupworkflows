@@ -1,2 +1,8 @@
-cp -R ./Setup/* ~/Library/Services
+BASEDIR=$(dirname "$0")
+cp -R $BASEDIR/Setup/* ~/Library/Services
 rm -rf ~/Library/Services/template.workflow
+
+# Setup directory for Workflow Management
+mkdir ~/Documents/WorkflowManagement
+mkdir ~/Documents/WorkflowManagement/Setup
+cp -R $BASEDIR/Setup/template.workflow ~/Documents/WorkflowManagement/Setup
