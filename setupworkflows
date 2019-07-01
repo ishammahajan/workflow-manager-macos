@@ -9,3 +9,8 @@ cp -R $BASEDIR/Setup/template.workflow ~/Documents/WorkflowManagement/Setup
 
 # Copy createworkflow script to executable path
 cp $BASEDIR/createworkflow /usr/local/bin/
+
+# Setup the default browser -- Google Chrome for now
+rm ~/Documents/WorkflowManagement/default_browser.txt
+touch ~/Documents/WorkflowManagement/default_browser.txt
+echo "Google Chrome" >> ~/Documents/WorkflowManagement/default_browser.txt
