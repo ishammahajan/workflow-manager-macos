@@ -17,10 +17,6 @@ fi
 # Make Directory for Workflow
 mkdir -p ~/Documents/WorkflowManagement/${1}
 
-# Setup the default browser -- Google Chrome for now
-touch ~/Documents/WorkflowManagement/default_browser.txt
-echo "Google Chrome" >> ~/Documents/WorkflowManagement/default_browser.txt
-
 # Setup config files for Workflow
 touch ~/Documents/WorkflowManagement/${1}/default-apps.txt
 touch ~/Documents/WorkflowManagement/${1}/default-url-list.txt
@@ -28,7 +24,7 @@ touch ~/Documents/WorkflowManagement/${1}/iterm-config.txt
 touch ~/Documents/WorkflowManagement/${1}/init
 
 # Setup actual Workflow Service, enabling quick switching
-cp -R ./Setup/template.workflow ~/Documents/WorkflowManagement/${1}/${1}.workflow
+cp -R ~/Documents/WorkflowManagement/Setup/template.workflow ~/Documents/WorkflowManagement/${1}/${1}.workflow
 sed -i '' "s/replaceName/${1}/g" ~/Documents/WorkflowManagement/${1}/${1}.workflow/Contents/Info.plist
 sed -i '' "s/replaceName/${1}/g" ~/Documents/WorkflowManagement/${1}/${1}.workflow/Contents/document.wflow
 open ~/Documents/WorkflowManagement/${1}/${1}.workflow
